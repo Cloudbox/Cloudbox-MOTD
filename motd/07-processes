@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /opt/motd/colors.txt
+
+echo -e " ${YEL}Processes...........:${NC} ${PUR}$(ps -ef | wc -l)${NC} running processes"

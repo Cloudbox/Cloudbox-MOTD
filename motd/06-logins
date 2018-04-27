@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /opt/motd/colors.txt
+
+echo -e " ${YEL}SSH Logins..........:${NC} ${PUR}$(who | wc -l)${NC} users logged in"

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source /opt/motd/colors.txt
+
+data=$(python3 /opt/motd/cloudbox-motd.py rtorrent get_torrent_counts)
+if [[ $data == ERROR* ]]
+then
+    rtorrent_torrents=0
+    rtorrent_downloading=0
+    rtorrent_seeding=0
+else
+    IFS='.' read -r -a array <<< "$data"
+    rtorrent_torrents=${array[0]}
+    rtorrent_downloading=${array[1]}
+    rtorrent_seeding=${array[2]}
+fi
+
+echo -e " ${YEL}Torrents............:${NC} Total: ${PUR}${rtorrent_torrents}${NC} | Downloading: ${PUR}${rtorrent_downloading}${NC} | Uploading: ${PUR}${rtorrent_seeding}${NC}"
+echo -e " ${YEL}Torrents Rx/Tx......:${NC} Down: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_download_rate)${NC} | Up: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_upload_rate)${NC}"
+echo -e " ${YEL}Torrents Bandwidth..:${NC} Downloaded: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_download_total)${NC} | Uploaded: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_upload_total)${NC}"

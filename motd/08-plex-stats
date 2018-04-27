@@ -1,0 +1,21 @@
+#!/bin/bash
+
+source /opt/motd/colors.txt
+
+data=$(python3 /opt/motd/cloudbox-motd.py plexpy get_stream_counts)
+
+if [[ $data == ERROR* ]]
+then
+    plex_transcodes=0
+    plex_direct_plays=0
+    plex_direct_streams=0
+else
+    IFS='.' read -r -a array <<< "$data"
+    plex_transcodes=${array[0]}
+    plex_direct_plays=${array[1]}
+    plex_direct_streams=${array[2]}
+fi
+
+echo -e " ${YEL}Plex Streams........:${NC} Transcodes: ${PUR}${plex_transcodes}${NC} | Direct Plays: ${PUR}${plex_direct_plays}${NC} | Direct Streams: ${PUR}${plex_direct_streams}${NC}"
+echo -e " ${YEL}Plex Rx.............:${NC} Up: ${PUR}$(python3 /opt/motd/cloudbox-motd.py plexpy get_stream_bandwidth)${NC}"
+
