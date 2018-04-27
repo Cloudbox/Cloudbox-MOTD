@@ -56,4 +56,3 @@ class Rtorrent:
         except Exception:
             pass
         return total_torrents, total_downloading, total_seeding
-

@@ -11,7 +11,8 @@ class Plexpy:
     def get_stream_counts(self):
         transcodes, direct_plays, direct_streams = 0, 0, 0
         try:
-            req = requests.get("{}/api/v2?apikey={}&cmd=get_activity".format(self.url, self.api_key)).json()['response']
+            req = requests.get("{}/api/v2?apikey={}&cmd=get_activity".format(self.url, self.api_key),
+                               timeout=10).json()['response']
             transcodes = req['data']['stream_count_transcode']
             direct_plays = req['data']['stream_count_direct_play']
             direct_streams = req['data']['stream_count_direct_stream']
@@ -22,7 +23,8 @@ class Plexpy:
     def get_stream_bandwidth(self):
         stream_bandwidth = 0
         try:
-            req = requests.get("{}/api/v2?apikey={}&cmd=get_activity".format(self.url, self.api_key)).json()['response']
+            req = requests.get("{}/api/v2?apikey={}&cmd=get_activity".format(self.url, self.api_key),
+                               timeout=10).json()['response']
             stream_bandwidth = req['data']['total_bandwidth']
         except Exception:
             pass
