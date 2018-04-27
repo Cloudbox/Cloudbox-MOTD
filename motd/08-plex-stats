@@ -17,5 +17,5 @@ else
 fi
 
 echo -e " ${YEL}Plex Streams........:${NC} Transcodes: ${PUR}${plex_transcodes}${NC} | Direct Plays: ${PUR}${plex_direct_plays}${NC} | Direct Streams: ${PUR}${plex_direct_streams}${NC}"
-echo -e " ${YEL}Plex Rx.............:${NC} Up: ${PUR}$(python3 /opt/motd/cloudbox-motd.py plexpy get_stream_bandwidth)${NC}"
+echo -e " ${YEL}Plex Tx.............:${NC} Up: ${PUR}$(python3 /opt/motd/cloudbox-motd.py plexpy get_stream_bandwidth)${NC}"
 
