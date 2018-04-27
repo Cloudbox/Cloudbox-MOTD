@@ -8,9 +8,9 @@ then
     nzbget_nzbs=0
     nzbget_downloading=0
     nzbget_paused=0
-	nzbget_unpacking=0
-	nzbget_repairing=0
-	nzbget_verifying=0
+    nzbget_unpacking=0
+    nzbget_repairing=0
+    nzbget_verifying=0
 else
     IFS='.' read -r -a array <<< "$data"
     nzbget_nzbs=${array[0]}
