@@ -13,12 +13,12 @@ then
 	nzbget_verifying=0
 else
     IFS='.' read -r -a array <<< "$data"
-	nzbget_nzbs=${array[0]}
+    nzbget_nzbs=${array[0]}
     nzbget_downloading=${array[1]}
     nzbget_paused=${array[2]}
-	nzbget_unpacking=${array[3]}
-	nzbget_repairing=${array[4]}
-	nzbget_verifying=${array[5]}
+    nzbget_unpacking=${array[3]}
+    nzbget_repairing=${array[4]}
+    nzbget_verifying=${array[5]}
 fi
 
 echo -e " ${YEL}Nzbs................:${NC} Total: ${PUR}${nzbget_nzbs}${NC} | Downloading: ${PUR}${nzbget_downloading}${NC} | Paused: ${PUR}${nzbget_paused}${NC} | Unpack: ${PUR}${nzbget_unpacking}${NC} | Repair: ${PUR}${nzbget_repairing}${NC} | Verify: ${PUR}${nzbget_verifying}${NC}"
