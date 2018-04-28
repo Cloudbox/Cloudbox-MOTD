@@ -1,5 +1,4 @@
 #!/bin/bash
 
 # run cloudbox-motd to ensure config is latest
-meh=$(python3 /opt/motd/cloudbox-motd.py)
-
+meh=$(python3 /opt/motd/cloudbox-motd.py config upgrade)

@@ -53,7 +53,13 @@ if __name__ == "__main__":
     cmd_func = sys.argv[2].lower()
 
     # Process types
-    if cmd_type == 'rtorrent':
+    if cmd_type == 'config':
+
+        # Process funcs
+        if cmd_func == 'upgrade':
+            exit(0)
+
+    elif cmd_type == 'rtorrent':
         rtorrent = utils.Rtorrent(cfg.rtorrent.url)
 
         # Process funcs
