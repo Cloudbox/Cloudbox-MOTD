@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source /etc/update-motd.d/colors.txt
+
+data=$(python3 /opt/motd/cloudbox-motd.py disk usage /)
+if [[ $data == ERROR* ]]
+then
+    root_total=0 MB
+    root_used=0 MB
+    root_used_percent=0%
+    root_free=0 MB
+else
+    IFS='.' read -r -a array <<< "$data"
+    root_total=${array[0]}
+    root_used=${array[1]}
+    root_used_percent=${array[2]}
+    root_free=${array[3]}
+fi
+
+echo -e " ${TITLE_COLOR}Disk................:${NC} Used: ${TEXT_COLOR}${root_used}{NC} | Free: ${TEXT_COLOR}${root_free}${NC} | Total: ${TEXT_COLOR}${root_total}${NC}"
