@@ -15,6 +15,6 @@ else
     rtorrent_seeding=${array[2]}
 fi
 
-echo -e " ${YEL}Torrents............:${NC} Total: ${PUR}${rtorrent_torrents}${NC} | Downloading: ${PUR}${rtorrent_downloading}${NC} | Uploading: ${PUR}${rtorrent_seeding}${NC}"
-echo -e " ${YEL}Torrents Rx/Tx......:${NC} Down: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_download_rate)${NC} | Up: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_upload_rate)${NC}"
-echo -e " ${YEL}Torrents Bandwidth..:${NC} Downloaded: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_download_total)${NC} | Uploaded: ${PUR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_upload_total)${NC}"
+echo -e " ${TITLE_COLOR}Torrents............:${NC} Total: ${TEXT_COLOR}${rtorrent_torrents}${NC} | Downloading: ${TEXT_COLOR}${rtorrent_downloading}${NC} | Uploading: ${TEXT_COLOR}${rtorrent_seeding}${NC}"
+echo -e " ${TITLE_COLOR}Torrents Rx/Tx......:${NC} Down: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_download_rate)${NC} | Up: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_upload_rate)${NC}"
+echo -e " ${TITLE_COLOR}Torrents Bandwidth..:${NC} Downloaded: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_download_total)${NC} | Uploaded: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py rtorrent get_upload_total)${NC}"

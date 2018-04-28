@@ -2,4 +2,4 @@
 
 source /opt/motd/colors.txt
 
-echo -e " ${YEL}SSH Logins..........:${NC} ${PUR}$(who | wc -l)${NC} users logged in"
+echo -e " ${TITLE_COLOR}SSH Logins..........:${NC} ${TEXT_COLOR}$(who | wc -l)${NC} users logged in"

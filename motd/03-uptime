@@ -2,4 +2,4 @@
 
 source /opt/motd/colors.txt
 
-echo -e " ${YEL}Uptime..............:${NC} ${PUR}$(uptime -p | sed 's/^up.//')${NC}"
+echo -e " ${TITLE_COLOR}Uptime..............:${NC} ${TEXT_COLOR}$(uptime -p | sed 's/^up.//')${NC}"

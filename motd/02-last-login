@@ -2,4 +2,4 @@
 
 source /opt/motd/colors.txt
 
-echo -e " ${YEL}Last login..........:${NC} ${PUR}$(last | head -1 | cut -c 1-9 | xargs)${NC} at ${PUR}$(last | head -1 | cut -c 40-55 | xargs)${NC} from ${PUR}$(last | head -1 | cut -c 23-39 | xargs)${NC}"
+echo -e " ${TITLE_COLOR}Last login..........:${NC} ${TEXT_COLOR}$(last | head -1 | cut -c 1-9 | xargs)${NC} at ${TEXT_COLOR}$(last | head -1 | cut -c 40-55 | xargs)${NC} from ${TEXT_COLOR}$(last | head -1 | cut -c 23-39 | xargs)${NC}"
