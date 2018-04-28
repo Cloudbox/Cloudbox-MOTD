@@ -21,6 +21,6 @@ else
     nzbget_verifying=${array[5]}
 fi
 
-echo -e " ${YEL}Nzbs................:${NC} Total: ${PUR}${nzbget_nzbs}${NC} | Downloading: ${PUR}${nzbget_downloading}${NC} | Paused: ${PUR}${nzbget_paused}${NC} | Unpack: ${PUR}${nzbget_unpacking}${NC} | Repair: ${PUR}${nzbget_repairing}${NC} | Verify: ${PUR}${nzbget_verifying}${NC}"
-echo -e " ${YEL}Nzbs Rx.............:${NC} Down: ${PUR}$(python3 /opt/motd/cloudbox-motd.py nzbget get_download_rate)${NC}"
-echo -e " ${YEL}Nzbs Bandwidth......:${NC} Downloaded: ${PUR}$(python3 /opt/motd/cloudbox-motd.py nzbget get_download_total)${NC}"
+echo -e " ${TITLE_COLOR}Nzbs................:${NC} Total: ${TEXT_COLOR}${nzbget_nzbs}${NC} | Downloading: ${TEXT_COLOR}${nzbget_downloading}${NC} | Paused: ${TEXT_COLOR}${nzbget_paused}${NC} | Unpack: ${TEXT_COLOR}${nzbget_unpacking}${NC} | Repair: ${TEXT_COLOR}${nzbget_repairing}${NC} | Verify: ${TEXT_COLOR}${nzbget_verifying}${NC}"
+echo -e " ${TITLE_COLOR}Nzbs Rx.............:${NC} Down: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py nzbget get_download_rate)${NC}"
+echo -e " ${TITLE_COLOR}Nzbs Bandwidth......:${NC} Downloaded: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py nzbget get_download_total)${NC}"

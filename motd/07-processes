@@ -2,4 +2,4 @@
 
 source /opt/motd/colors.txt
 
-echo -e " ${YEL}Processes...........:${NC} ${PUR}$(ps -ef | wc -l)${NC} running processes"
+echo -e " ${TITLE_COLOR}Processes...........:${NC} ${TEXT_COLOR}$(ps -ef | wc -l)${NC} running processes"
