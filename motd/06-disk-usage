@@ -10,11 +10,11 @@ then
     root_used_percent=0%
     root_free=0 MB
 else
-    IFS='.' read -r -a array <<< "$data"
+    IFS='|' read -r -a array <<< "$data"
     root_total=${array[0]}
     root_used=${array[1]}
     root_used_percent=${array[2]}
     root_free=${array[3]}
 fi
 
-echo -e " ${TITLE_COLOR}Disk................:${NC} Used: ${TEXT_COLOR}${root_used}{NC} | Free: ${TEXT_COLOR}${root_free}${NC} | Total: ${TEXT_COLOR}${root_total}${NC}"
+echo -e " ${TITLE_COLOR}Disk................:${NC} Used: ${TEXT_COLOR}${root_used}${NC} | Free: ${TEXT_COLOR}${root_free}${NC} | Total: ${TEXT_COLOR}${root_total}${NC}"
