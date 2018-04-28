@@ -45,6 +45,8 @@ class Config(object, metaclass=Singleton):
             'api_key': 'YOUR_API_KEY'
         },
         'motd': {
+            'TITLE_COLOR': 'LBLU',
+            'TEXT_COLOR': 'LGRN',
             'show': {
                 'plexpy': False,
                 'rtorrent': False,

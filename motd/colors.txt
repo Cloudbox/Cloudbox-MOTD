@@ -12,5 +12,5 @@ LBLU='\e[38;5;75m' # Light Blue
 LGRN='\e[38;5;83m' # Light Green
 NC='\033[0m' # No Color
 
-TITLE_COLOR=${LBLU}
-TEXT_COLOR=${LGRN}
+eval "TITLE_COLOR=\$$(cat /opt/motd/config.json | jq '.motd.TITLE_COLOR' --raw-output)"
+eval "TEXT_COLOR=\$$(cat /opt/motd/config.json | jq '.motd.TEXT_COLOR' --raw-output)"

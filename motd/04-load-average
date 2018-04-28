@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source /opt/motd/colors.txt
+source /etc/update-motd.d/colors.txt
 
 echo -e " ${TITLE_COLOR}Load Averages.......:${NC} 1 min: ${TEXT_COLOR}$(cat /proc/loadavg | cut -f1 -d' ')${NC} | 5 mins: ${TEXT_COLOR}$(cat /proc/loadavg | cut -f2 -d' ')${NC} | 15 mins: ${TEXT_COLOR}$(cat /proc/loadavg | cut -f3 -d' ')${NC}"

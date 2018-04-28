@@ -3,7 +3,7 @@
 # exit if not enabled in config
 if [ "$(cat /opt/motd/config.json | jq '.motd.show.nzbget' --raw-output)" == "false" ]; then exit 0; fi
 
-source /opt/motd/colors.txt
+source /etc/update-motd.d/colors.txt
 
 data=$(python3 /opt/motd/cloudbox-motd.py nzbget get_nzb_counts)
 if [[ $data == ERROR* ]]
