@@ -1,6 +1,3 @@
-import json
-
-
 def bytes_to_string(size_bytes):
     """
     reference: https://stackoverflow.com/a/6547474
@@ -38,10 +35,3 @@ def kbps_to_string(size_kbps):
     except Exception:
         pass
     return "%d Bbps" % size_kbps
-
-
-def load_config():
-    conf = {}
-    with open("/opt/motd/config.json", 'r') as fp:
-        conf = json.load(fp)
-    return conf
