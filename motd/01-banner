@@ -1,4 +1,4 @@
 #!/bin/bash
 
-figlet CloudBox
+toilet -f ivrit 'CloudBox' | boxes -d dog -a hc -p h8
 echo ""
