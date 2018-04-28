@@ -8,7 +8,9 @@ CYA='\033[0;36m' # Cyan
 WHI='\033[0;37m' # White
 YEL='\033[0;33m' # Yellow
 PUR='\033[0;35m' # Purple
+LBLU='\e[38;5;75m' # Light Blue
+LGRN='\e[38;5;83m' # Light Green
 NC='\033[0m' # No Color
 
-TITLE_COLOR=${BLU}
-TEXT_COLOR=${GRN}
+TITLE_COLOR=${LBLU}
+TEXT_COLOR=${LGRN}
