@@ -20,5 +20,5 @@ then
     type=dog
 fi
 
-toilet -f ivrit 'CloudBox' | boxes -d "${type}" -a hc -p h8
+toilet -f ivrit 'Cloudbox' | boxes -d "${type}" -a hc -p h8
 echo ""
