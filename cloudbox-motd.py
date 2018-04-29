@@ -59,6 +59,14 @@ if __name__ == "__main__":
         if cmd_func == 'upgrade':
             exit(0)
 
+    elif cmd_type == 'autoscan':
+        autoscan = utils.Autoscan(cfg.autoscan.url, cfg.autoscan.api_key)
+
+        # Process funcs
+        if cmd_func == 'get_queue_count':
+            print(autoscan.get_queue_count())
+            exit(0)
+
     elif cmd_type == 'disk':
 
         # Process funcs

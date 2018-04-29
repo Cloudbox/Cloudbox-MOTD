@@ -34,6 +34,10 @@ class AttrConfig(AttrDict):
 
 class Config(object, metaclass=Singleton):
     base_config = {
+        'autoscan': {
+            'url': 'http://autoscan.domain.com:3468',
+            'api_key': 'YOUR_SERVER_PASS'
+        },
         'rtorrent': {
             'url': 'https://user:password@rutorrent.domain.com'
         },
@@ -49,6 +53,7 @@ class Config(object, metaclass=Singleton):
             'text_color': 'LGRN',
             'title_color': 'LBLU',
             'show': {
+                'autoscan': False,
                 'plexpy': False,
                 'rtorrent': False,
                 'nzbget': False
