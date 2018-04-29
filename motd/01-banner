@@ -1,4 +1,24 @@
 #!/bin/bash
 
-toilet -f ivrit 'CloudBox' | boxes -d dog -a hc -p h8
+# reference: https://stackoverflow.com/a/8574392
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
+types=(
+    "ada-box" "ada-cmt" "boxquote" "boy" "c" "c-cmt" "c-cmt2" "c-cmt3" "caml" "capgirl" "dog" "cat" "peek" "diamonds"
+    "cc" "ccel" "columns" "girl" "headline" "html" "html-cmt" "ian_jones" "java-cmt" "javadoc" "lisp-cmt" "mouse"
+    "netdata" "nuke" "parchment" "pound-cmt" "right" "santa" "scroll" "shell" "simple" "spring" "stark1"
+    "stark2" "stone" "sunset" "tjc" "underline" "unicornsay" "unicornthink" "vim-cmt" "whirly" "xes"
+)
+type="$(cat /opt/motd/config.json | jq '.motd.banner_type' --raw-output)"
+if ! containsElement "${type}" "${types[@]}" ]
+then
+    type=dog
+fi
+
+toilet -f ivrit 'CloudBox' | boxes -d "${type}" -a hc -p h8
 echo ""
