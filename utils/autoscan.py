@@ -10,7 +10,7 @@ class Autoscan:
         try:
             payload = {'cmd': 'queue_count'}
             resp = requests.post(self.url, json=payload, timeout=10)
-            if 'json' in resp.headers['Content-Type'].lower() and 'queue_count' in resp.content:
+            if 'json' in resp.headers['Content-Type'].lower() and 'queue_count' in resp.text:
                 count = resp.json()['queue_count']
         except Exception:
             pass
