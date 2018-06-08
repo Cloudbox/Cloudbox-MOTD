@@ -20,5 +20,7 @@ then
     type=dog
 fi
 
-toilet -f ivrit 'Cloudbox' | boxes -d "${type}" -a hc -p h8
+title="$(cat /opt/motd/config.json | jq '.motd.banner_title' --raw-output)"
+
+toilet -f ivrit "${title:-Cloudbox}" | boxes -d "${type}" -a hc -p h8
 echo ""
