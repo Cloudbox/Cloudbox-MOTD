@@ -15,7 +15,7 @@ types=(
     "stark2" "stone" "sunset" "tjc" "underline" "unicornsay" "unicornthink" "vim-cmt" "whirly" "xes"
 )
 type="$(cat /opt/motd/config.json | jq '.motd.banner_type' --raw-output)"
-if ! containsElement "${type}" "${types[@]}" ]
+if ! containsElement "${type}" "${types[@]}"
 then
     type=dog
 fi
