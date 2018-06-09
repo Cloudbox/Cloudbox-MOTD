@@ -50,6 +50,7 @@ class Config(object, metaclass=Singleton):
         },
         'motd': {
             'banner_type': 'dog',
+            'banner_title': 'Cloudbox',
             'text_color': 'LGRN',
             'title_color': 'LBLU',
             'show': {
