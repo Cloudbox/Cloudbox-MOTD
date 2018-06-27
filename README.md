@@ -1,4 +1,4 @@
-# cloudbox_motd
+# Cloudbox MOTD
 Dynamic motd for Cloudbox
 
 # Info
