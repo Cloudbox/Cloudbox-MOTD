@@ -11,7 +11,7 @@ class Rtorrent:
         total_bytes = 0
         try:
             with self.xmlrpc as proxy:
-                total_bytes = proxy.get_down_total()
+                total_bytes = proxy.throttle.global_down.total()
         except Exception:
             pass
         return misc.bytes_to_string(total_bytes)
@@ -20,7 +20,7 @@ class Rtorrent:
         total_bytes = 0
         try:
             with self.xmlrpc as proxy:
-                total_bytes = proxy.get_up_total()
+                total_bytes = proxy.throttle.global_up.total()
         except Exception:
             pass
         return misc.bytes_to_string(total_bytes)
@@ -29,7 +29,7 @@ class Rtorrent:
         total_rate = 0
         try:
             with self.xmlrpc as proxy:
-                total_rate = proxy.get_down_rate()
+                total_rate = proxy.throttle.global_down.rate()
         except Exception:
             pass
         return "%sps" % misc.bytes_to_string(total_rate).replace('B', 'b')
@@ -38,7 +38,7 @@ class Rtorrent:
         total_rate = 0
         try:
             with self.xmlrpc as proxy:
-                total_rate = proxy.get_up_rate()
+                total_rate = proxy.throttle.global_up.rate()
         except Exception:
             pass
         return "%sps" % misc.bytes_to_string(total_rate).replace('B', 'b')
@@ -49,8 +49,8 @@ class Rtorrent:
         total_torrents = 0
         try:
             with self.xmlrpc as proxy:
-                torrents = proxy.d.multicall("main", "d.get_name=", "d.get_custom1=", "d.get_ratio=",
-                                             "d.get_up_rate=", "d.get_down_rate=")
+                torrents = proxy.d.multicall2("", "", "d.name=", "d.custom1=", "d.ratio=",
+                                              "d.up.rate=", "d.down.rate=")
                 total_torrents = len(torrents)
                 for torrent in torrents:
                     if int(torrent[-2]):
