@@ -11,9 +11,9 @@ def get_disk_usage(path):
 
     try:
         stat_res = os.statvfs(path)
-        total = stat_res.f_frsize * stat_res.f_blocks
-        free = stat_res.f_frsize * stat_res.f_bavail
-        used = total - free
+        total = stat_res.f_blocks * stat_res.f_bsize
+        free = stat_res.f_bfree * stat_res.f_bsize
+        used = (stat_res.f_blocks - stat_res.f_bfree) * stat_res.f_bsize
 
         total_space = misc.bytes_to_string(total)
         free_space = misc.bytes_to_string(free)
