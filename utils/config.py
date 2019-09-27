@@ -49,8 +49,9 @@ class Config(object, metaclass=Singleton):
             'api_key': 'YOUR_API_KEY'
         },
         'motd': {
-            'banner_type': 'dog',
             'banner_title': 'Cloudbox',
+            'banner_type': 'peek',
+            'banner_font': 'ivrit',
             'text_color': 'LGRN',
             'title_color': 'LBLU',
             'show': {
